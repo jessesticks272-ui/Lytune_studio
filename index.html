@@ -2,27 +2,142 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Lytune Drops</title>
-  <link rel="icon" href="assets/images/Rectangle.png" sizes="32x32" type="image/png">
-  <link rel="stylesheet" href="style.css" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+  <title>Lytune Studio</title>
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml" href="assets/images/logo.svg">
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="style.css">
+
+  <!-- Font -->
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700;800&display=swap" rel="stylesheet">
 </head>
+
 <body>
-  <div class="container">
-    <div class="hero">
-      <img src="assets/images/Rectangle.png" alt="lytune drop logo" class="logo">  
-      <h1>Lytune Drops</h1>
-      <p class="tagline">
-        Unleash Your Sound. Drop Beats. Get Heard.
-      </p>
-      <a href="home.html" class="genz-btn">Explore Marketplace</a>
+
+<div class="container">
+
+  <!-- HERO -->
+  <div class="hero">
+
+    <!-- LOGO -->
+    <div class="logo">
+
+      <svg viewBox="0 0 220 220" xmlns="http://www.w3.org/2000/svg">
+
+        <defs>
+
+          <linearGradient id="lytuneGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+            <stop offset="0%" stop-color="#19D7FF"/>
+            <stop offset="55%" stop-color="#007BFF"/>
+            <stop offset="100%" stop-color="#9B2EFF"/>
+          </linearGradient>
+
+        </defs>
+
+        <path
+          d="
+            M48 165
+
+            L82 65
+
+            Q86 50 98 47
+
+            Q110 44 121 56
+
+            L174 118
+
+            Q184 130 180 145
+
+            Q175 159 160 160
+
+            Q149 161 141 152
+
+            L109 116
+
+            L82 166
+
+            Q76 176 64 176
+
+            Q53 176 48 165
+          "
+          fill="none"
+          stroke="url(#lytuneGradient)"
+          stroke-width="24"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+        />
+
+      </svg>
+
     </div>
-    <div class="social-proof">
-      <span>🔥 10,000+ beats dropped</span>
-      <span>🎧 5,000+ producers</span>
-      <span>🌍 Global community</span>
-    </div>
+
+    <h1>Lytune Studio</h1>
+
+    <p class="tagline">
+      Africa’s next-gen beat marketplace for producers, creators & sonic rebels.
+    </p>
+
+    <a href="home.html" class="genz-btn">
+      ENTER THE WAVE 🌊
+    </a>
+
   </div>
+
+  <!-- SOCIAL PROOF -->
+  <div class="social-proof">
+    <span>🔥 10,000+ beats dropped</span>
+    <span>🎧 5,000+ producers</span>
+    <span>🌍 Global community</span>
+  </div>
+
+  <!-- HOW IT WORKS -->
+  <section class="how-it-works">
+
+    <h2>How It Works</h2>
+
+    <div class="steps">
+
+      <div class="step">
+        <span class="step-emoji">🎵</span>
+        <h3>Upload Your Beat</h3>
+        <p>Drop your hottest Afrobeat, Amapiano & Trap sounds instantly.</p>
+      </div>
+
+      <div class="step">
+        <span class="step-emoji">⚡</span>
+        <h3>Create Your Wave</h3>
+        <p>Customize your sound identity and stand out in the culture.</p>
+      </div>
+
+      <div class="step">
+        <span class="step-emoji">🚀</span>
+        <h3>Go Viral</h3>
+        <p>Share globally and connect with artists, creators and fans.</p>
+      </div>
+
+    </div>
+
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    © 2026 Lytune Studio — Built for the new sound generation.
+  </footer>
+
+  <!-- DESKTOP ONLY -->
+  <div class="desktop-only">
+    <!-- Full content for desktop -->
+  </div>
+  <!-- MOBILE SUMMARY -->
+  <div class="mobile-summary">
+    <!-- Short summary for mobile -->
+  </div>
+
+</div>
+
 </body>
 </html>
