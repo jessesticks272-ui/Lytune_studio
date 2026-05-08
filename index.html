@@ -2,143 +2,225 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Lytune Studio</title>
-
   <!-- Favicon -->
   <link rel="icon" type="image/svg+xml" href="assets/images/logo.svg">
   <link rel="alternate icon" type="image/png" href="assets/images/logo.png">
-
   <!-- CSS -->
   <link rel="stylesheet" href="style.css">
-
   <!-- Font -->
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
 </head>
-
 <body>
 
-<div class="container">
+  <!-- Background Effects -->
+  <div class="bg-blur blur1"></div>
+  <div class="bg-blur blur2"></div>
+  <div class="noise"></div>
 
-  <!-- HERO -->
-  <div class="hero">
-
-    <!-- LOGO -->
-    <div class="logo">
-
-      <svg viewBox="0 0 220 220" xmlns="http://www.w3.org/2000/svg">
-
-        <defs>
-
-          <linearGradient id="lytuneGradient" x1="0%" y1="0%" x2="100%" y2="100%">
-            <stop offset="0%" stop-color="#19D7FF"/>
-            <stop offset="55%" stop-color="#007BFF"/>
-            <stop offset="100%" stop-color="#9B2EFF"/>
-          </linearGradient>
-
-        </defs>
-
-        <path
-          d="
-            M48 165
-
-            L82 65
-
-            Q86 50 98 47
-
-            Q110 44 121 56
-
-            L174 118
-
-            Q184 130 180 145
-
-            Q175 159 160 160
-
-            Q149 161 141 152
-
-            L109 116
-
-            L82 166
-
-            Q76 176 64 176
-
-            Q53 176 48 165
-          "
-          fill="none"
-          stroke="url(#lytuneGradient)"
-          stroke-width="24"
-          stroke-linecap="round"
-          stroke-linejoin="round"
-        />
-
-      </svg>
-
+  <!-- Header -->
+  <header class="topbar">
+    <div class="brand">
+      <div class="mini-logo">
+        <!-- Logo SVG -->
+        <svg viewBox="0 0 220 220" xmlns="http://www.w3.org/2000/svg">
+          <defs>
+            <linearGradient id="lytuneGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+              <stop offset="0%" stop-color="#19D7FF"/>
+              <stop offset="55%" stop-color="#007BFF"/>
+              <stop offset="100%" stop-color="#9B2EFF"/>
+            </linearGradient>
+          </defs>
+          <path
+            d="M48 165 L82 65 Q86 50 98 47 Q110 44 121 56 L174 118 Q184 130 180 145 Q175 159 160 160 Q149 161 141 152 L109 116 L82 166 Q76 176 64 176 Q53 176 48 165"
+            fill="none"
+            stroke="url(#lytuneGradient)"
+            stroke-width="24"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          />
+        </svg>
+      </div>
+      <span>Lytune Studio</span>
     </div>
+    <nav>
+      <a href="#discover">Discover</a>
+      <a href="#vibes">Vibes</a>
+      <a href="#creator">Creators</a>
+    </nav>
+  </header>
 
-    <h1>Lytune Studio</h1>
-
-    <p class="tagline">
-      Africa’s next-gen beat marketplace for producers, creators & sonic rebels.
-    </p>
-
-    <a href="home.html" class="genz-btn">
-      ENTER THE WAVE 🌊
-    </a>
-
-  </div>
-
-  <!-- SOCIAL PROOF -->
-  <div class="social-proof">
-    <span>🔥 10,000+ beats dropped</span>
-    <span>🎧 5,000+ producers</span>
-    <span>🌍 Global community</span>
-  </div>
-
-  <!-- HOW IT WORKS -->
-  <section class="how-it-works">
-
-    <h2>How It Works</h2>
-
-    <div class="steps">
-
-      <div class="step">
-        <span class="step-emoji">🎵</span>
-        <h3>Upload Your Beat</h3>
-        <p>Drop your hottest Afrobeat, Amapiano & Trap sounds instantly.</p>
+  <!-- Hero Section -->
+  <section class="hero">
+    <div class="hero-content">
+      <div class="hero-badge">
+        🔥 Afrobeat • Amapiano • Trap • Street Vibes
       </div>
-
-      <div class="step">
-        <span class="step-emoji">⚡</span>
-        <h3>Create Your Wave</h3>
-        <p>Customize your sound identity and stand out in the culture.</p>
+      <h1>
+        THE FUTURE OF <span>AFRICAN SOUND</span>
+      </h1>
+      <p>
+        Lytune Studio is where producers sell beats, artists discover fresh sounds,
+        and creators build the next global wave.
+      </p>
+      <div class="hero-buttons">
+        <a href="home.html" class="main-btn">ENTER THE WAVE 🌊</a>
+        <a href="#discover" class="ghost-btn">Explore Beats</a>
       </div>
-
-      <div class="step">
-        <span class="step-emoji">🚀</span>
-        <h3>Go Viral</h3>
-        <p>Share globally and connect with artists, creators and fans.</p>
+      <div class="stats">
+        <div class="stat-card">
+          <h2>10K+</h2>
+          <span>Beat Drops</span>
+        </div>
+        <div class="stat-card">
+          <h2>5K+</h2>
+          <span>Creators</span>
+        </div>
+        <div class="stat-card">
+          <h2>50+</h2>
+          <span>Countries Vibing</span>
+        </div>
       </div>
-
     </div>
-
+    <div class="hero-visual">
+      <div class="main-logo">
+        <svg viewBox="0 0 220 220" xmlns="http://www.w3.org/2000/svg">
+          <defs>
+            <linearGradient id="lytuneGradient2" x1="0%" y1="0%" x2="100%" y2="100%">
+              <stop offset="0%" stop-color="#19D7FF"/>
+              <stop offset="55%" stop-color="#007BFF"/>
+              <stop offset="100%" stop-color="#9B2EFF"/>
+            </linearGradient>
+          </defs>
+          <path
+            d="M48 165 L82 65 Q86 50 98 47 Q110 44 121 56 L174 118 Q184 130 180 145 Q175 159 160 160 Q149 161 141 152 L109 116 L82 166 Q76 176 64 176 Q53 176 48 165"
+            fill="none"
+            stroke="url(#lytuneGradient2)"
+            stroke-width="24"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          />
+        </svg>
+      </div>
+      <div class="floating-card card1">🎧 Trending Afrobeat</div>
+      <div class="floating-card card2">🚀 New Beat Packs</div>
+      <div class="floating-card card3">⚡ Producer Mode</div>
+    </div>
   </section>
 
-  <!-- FOOTER -->
+  <!-- Discover Section -->
+  <section class="discover" id="discover">
+    <div class="section-title">
+      <span>DISCOVER THE CULTURE</span>
+      <h2>Built For The New Sound Generation</h2>
+    </div>
+    <div class="discover-grid">
+      <div class="discover-card">
+        <div class="icon">🎵</div>
+        <h3>Upload Beats</h3>
+        <p>Drop your sound instantly and let artists across the world hear your vibe.</p>
+      </div>
+      <div class="discover-card">
+        <div class="icon">🌍</div>
+        <h3>Global Reach</h3>
+        <p>Connect with creators, dancers, streamers and artists worldwide.</p>
+      </div>
+      <div class="discover-card">
+        <div class="icon">💸</div>
+        <h3>Monetize</h3>
+        <p>Sell licenses, exclusive beats and build your producer empire.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Vibe Banner -->
+  <section class="vibe-banner" id="vibes">
+    <div class="marquee">
+      <span>AFROBEAT ENERGY ✦ STREET CULTURE ✦ CREATOR ECONOMY ✦ GEN-Z SOUND ✦ AMAPIANO MOTION ✦ VIRAL VIBES ✦</span>
+    </div>
+  </section>
+
+  <!-- Creator Section -->
+  <section class="creator-section" id="creator">
+    <div class="creator-left">
+      <span class="small-title">CREATOR MODE</span>
+      <h2>Your Beats Deserve A Bigger Stage.</h2>
+      <p>
+        Lytune Studio gives producers their own digital room to upload,
+        showcase and sell beats with style.
+      </p>
+      <ul>
+        <li>⚡ Instant uploads</li>
+        <li>🔥 Gen-Z UI experience</li>
+        <li>🎧 Audio previews</li>
+        <li>🌊 Viral-ready sharing</li>
+      </ul>
+      <a href="home.html" class="main-btn creator-btn">Start Creating</a>
+    </div>
+    <div class="creator-right">
+      <div class="music-player">
+        <div class="player-top">
+          <div class="player-logo">
+            <svg viewBox="0 0 220 220" xmlns="http://www.w3.org/2000/svg">
+              <defs>
+                <linearGradient id="lytuneGradient3" x1="0%" y1="0%" x2="100%" y2="100%">
+                  <stop offset="0%" stop-color="#19D7FF"/>
+                  <stop offset="55%" stop-color="#007BFF"/>
+                  <stop offset="100%" stop-color="#9B2EFF"/>
+                </linearGradient>
+              </defs>
+              <path
+                d="M48 165 L82 65 Q86 50 98 47 Q110 44 121 56 L174 118 Q184 130 180 145 Q175 159 160 160 Q149 161 141 152 L109 116 L82 166 Q76 176 64 176 Q53 176 48 165"
+                fill="none"
+                stroke="url(#lytuneGradient3)"
+                stroke-width="24"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              />
+            </svg>
+          </div>
+          <div>
+            <h3>Midnight Lagos</h3>
+            <span>Afrobeat Instrumental</span>
+          </div>
+        </div>
+        <div class="waveform"></div>
+        <div class="player-controls">
+          <span>⏮</span>
+          <span class="play-btn">▶</span>
+          <span>⏭</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
   <footer class="footer">
-    © 2026 Lytune Studio — Built for the new sound generation.
+    <div class="footer-brand">
+      <div class="footer-logo">
+        <svg viewBox="0 0 220 220" xmlns="http://www.w3.org/2000/svg">
+          <defs>
+            <linearGradient id="lytuneGradient4" x1="0%" y1="0%" x2="100%" y2="100%">
+              <stop offset="0%" stop-color="#19D7FF"/>
+              <stop offset="55%" stop-color="#007BFF"/>
+              <stop offset="100%" stop-color="#9B2EFF"/>
+            </linearGradient>
+          </defs>
+          <path
+            d="M48 165 L82 65 Q86 50 98 47 Q110 44 121 56 L174 118 Q184 130 180 145 Q175 159 160 160 Q149 161 141 152 L109 116 L82 166 Q76 176 64 176 Q53 176 48 165"
+            fill="none"
+            stroke="url(#lytuneGradient4)"
+            stroke-width="24"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          />
+        </svg>
+      </div>
+      <span>Lytune Studio</span>
+    </div>
+    <p>© 2026 Lytune Studio — Africa's next wave of creators.</p>
   </footer>
-
-  <!-- DESKTOP ONLY -->
-  <div class="desktop-only">
-    <!-- Full content for desktop -->
-  </div>
-  <!-- MOBILE SUMMARY -->
-  <div class="mobile-summary">
-    <!-- Short summary for mobile -->
-  </div>
-
-</div>
 
 </body>
 </html>
