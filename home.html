@@ -8,6 +8,22 @@
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
 
   <style>
+
+    :root{
+      color-scheme:dark;
+
+      --bg-1:#020617;
+      --bg-2:#04167a;
+      --bg-3:#02153e;
+      --bg-4:#000814;
+
+      --accent-1:#19D7FF;
+      --accent-2:#007BFF;
+      --accent-3:#9B2EFF;
+
+      --white:#ffffff;
+    }
+
     *{
       margin:0;
       padding:0;
@@ -15,270 +31,856 @@
       font-family:'Poppins',sans-serif;
     }
 
-    body{
-      background:#070710;
-      color:white;
-      overflow-x:hidden;
+    html{
+      scroll-behavior:smooth;
     }
 
-    /* GLOW */
-    .glow{
+    body{
+      min-height:100vh;
+
+      background:
+      linear-gradient(
+        -45deg,
+        var(--bg-1),
+        var(--bg-2),
+        var(--bg-3),
+        var(--bg-4)
+      );
+
+      background-size:400% 400%;
+      animation:bgMove 10s ease infinite;
+
+      color:white;
+      overflow-x:hidden;
+      position:relative;
+    }
+
+    body::before{
+      content:"";
+
       position:fixed;
-      width:400px;
-      height:400px;
+      inset:0;
+
+      background:
+      radial-gradient(circle at top left, rgba(25,215,255,.18), transparent 35%),
+      radial-gradient(circle at bottom right, rgba(155,46,255,.18), transparent 35%);
+
+      pointer-events:none;
+    }
+
+    .noise{
+      position:fixed;
+      inset:0;
+
+      opacity:.03;
+
+      background-image:url('https://www.transparenttextures.com/patterns/asfalt-light.png');
+
+      pointer-events:none;
+    }
+
+    .bg-blur{
+      position:fixed;
       border-radius:50%;
-      filter:blur(150px);
+      filter:blur(120px);
       z-index:-1;
     }
 
-    .glow1{
-      background:#ff7b00;
-      top:-150px;
-      left:-150px;
+    .blur1{
+      width:350px;
+      height:350px;
+
+      background:#008cff;
+
+      top:-120px;
+      left:-120px;
+
+      opacity:.25;
     }
 
-    .glow2{
-      background:#6a00ff;
-      bottom:-150px;
-      right:-150px;
+    .blur2{
+      width:320px;
+      height:320px;
+
+      background:#9B2EFF;
+
+      bottom:-100px;
+      right:-100px;
+
+      opacity:.2;
     }
 
-    /* NAV */
-    .navbar{
+    /* NAVBAR */
+
+    .topbar{
+      width:100%;
+      max-width:1300px;
+
+      margin:auto;
+
+      padding:1.5rem 6%;
+
       display:flex;
       justify-content:space-between;
       align-items:center;
-      padding:25px 7%;
+
       position:sticky;
       top:0;
-      background:rgba(0,0,0,0.4);
+
       backdrop-filter:blur(15px);
+
+      z-index:100;
     }
 
-    .logo{
-      font-size:1.8rem;
-      font-weight:800;
-      background:linear-gradient(90deg,#ff7b00,#ff2e63,#6a00ff);
-      -webkit-background-clip:text;
-      -webkit-text-fill-color:transparent;
-    }
-
-    .nav-links{
+    .brand{
       display:flex;
-      gap:25px;
-      list-style:none;
+      align-items:center;
+      gap:12px;
+
+      font-size:1.2rem;
+      font-weight:700;
     }
 
-    .nav-links a{
-      color:#bbb;
+    nav{
+      display:flex;
+      gap:2rem;
+    }
+
+    nav a{
+      color:#d7d7d7;
       text-decoration:none;
+      transition:.3s;
     }
 
-    .nav-links a:hover{
-      color:#ffb700;
+    nav a:hover{
+      color:var(--accent-1);
     }
 
-    .nav-btn{
-      padding:10px 20px;
+    .launch-btn{
+      padding:.9rem 1.5rem;
+
       border:none;
-      border-radius:30px;
-      background:linear-gradient(90deg,#ff7b00,#ff2e63);
+      border-radius:999px;
+
+      background:
+      linear-gradient(
+        90deg,
+        #19D7FF,
+        #007BFF,
+        #9B2EFF
+      );
+
       color:white;
+      font-weight:700;
+
       cursor:pointer;
     }
 
     /* HERO */
+
     .hero{
-      display:flex;
-      justify-content:space-between;
+      width:100%;
+      max-width:1300px;
+
+      margin:auto;
+
+      display:grid;
+      grid-template-columns:1fr 1fr;
+
       align-items:center;
-      padding:100px 7%;
+      gap:2rem;
+
+      padding:4rem 6%;
     }
 
-    .hero-text{
-      max-width:500px;
+    .hero-content{
+      max-width:650px;
     }
 
-    .tag{
-      background:rgba(255,255,255,0.1);
-      padding:6px 12px;
-      border-radius:20px;
-      font-size:12px;
+    .hero-badge{
+      display:inline-flex;
+      align-items:center;
+      gap:.6rem;
+
+      padding:.9rem 1.3rem;
+
+      border-radius:999px;
+
+      background:rgba(255,255,255,.06);
+
+      border:1px solid rgba(255,255,255,.08);
+
+      backdrop-filter:blur(12px);
+
+      margin-bottom:1.8rem;
+
+      font-size:.85rem;
+      font-weight:500;
     }
 
     .hero h1{
-      font-size:3.5rem;
-      margin:20px 0;
+      font-size:5rem;
+      line-height:1;
+
+      font-weight:800;
+
+      margin-bottom:1.5rem;
+
+      background:
+      linear-gradient(
+        90deg,
+        #ffffff,
+        #19D7FF,
+        #9B2EFF
+      );
+
+      -webkit-background-clip:text;
+      -webkit-text-fill-color:transparent;
     }
 
     .hero p{
-      color:#aaa;
-      line-height:1.6;
+      font-size:1rem;
+      line-height:1.9;
+
+      color:#d4d4d4;
     }
 
     .hero-buttons{
-      margin-top:20px;
+      margin-top:2rem;
+
       display:flex;
-      gap:15px;
+      gap:1rem;
+      flex-wrap:wrap;
     }
 
-    .btn-primary{
-      background:linear-gradient(90deg,#ff7b00,#ff2e63);
-      padding:12px 20px;
-      border-radius:30px;
+    .main-btn,
+    .ghost-btn{
+      padding:1rem 2rem;
+
+      border-radius:999px;
+
+      text-decoration:none;
+
+      font-weight:700;
+
+      transition:.3s;
+    }
+
+    .main-btn{
+      background:
+      linear-gradient(
+        90deg,
+        #19D7FF,
+        #007BFF,
+        #9B2EFF
+      );
+
       color:white;
-      text-decoration:none;
     }
 
-    .btn-secondary{
-      border:1px solid #444;
-      padding:12px 20px;
-      border-radius:30px;
-      color:#ccc;
-      text-decoration:none;
+    .main-btn:hover{
+      transform:translateY(-5px);
     }
 
-    .hero-card{
-      width:320px;
-      background:rgba(255,255,255,0.05);
-      border-radius:20px;
-      overflow:hidden;
+    .ghost-btn{
+      border:1px solid rgba(255,255,255,.1);
+
+      background:rgba(255,255,255,.05);
+
+      color:white;
     }
 
-    .hero-card img{
+    /* VIBE STRIP */
+
+    .vibe-strip{
+      margin-top:2rem;
+
+      display:flex;
+      gap:1rem;
+      flex-wrap:wrap;
+    }
+
+    .vibe-strip span{
+      padding:.8rem 1.1rem;
+
+      border-radius:999px;
+
+      background:rgba(255,255,255,.05);
+
+      border:1px solid rgba(255,255,255,.08);
+
+      font-size:.8rem;
+    }
+
+    /* HERO VISUAL */
+
+    .hero-visual{
+      position:relative;
+
+      display:flex;
+      justify-content:center;
+      align-items:center;
+    }
+
+    .main-logo{
+      width:420px;
+      height:420px;
+
+      border-radius:50%;
+
+      background:
+      linear-gradient(
+        135deg,
+        rgba(25,215,255,.2),
+        rgba(155,46,255,.2)
+      );
+
+      display:flex;
+      justify-content:center;
+      align-items:center;
+
+      animation:floatLogo 4s ease-in-out infinite;
+    }
+
+    .main-logo h2{
+      font-size:3rem;
+      text-align:center;
+
+      line-height:1.1;
+
+      background:
+      linear-gradient(
+        90deg,
+        #19D7FF,
+        #ffffff,
+        #9B2EFF
+      );
+
+      -webkit-background-clip:text;
+      -webkit-text-fill-color:transparent;
+    }
+
+    .floating-card{
+      position:absolute;
+
+      padding:1rem 1.3rem;
+
+      border-radius:22px;
+
+      background:rgba(255,255,255,.06);
+
+      border:1px solid rgba(255,255,255,.08);
+
+      backdrop-filter:blur(14px);
+
+      font-size:.92rem;
+      font-weight:600;
+
+      animation:floatCard 5s ease-in-out infinite;
+    }
+
+    .card1{
+      top:40px;
+      left:10px;
+    }
+
+    .card2{
+      right:0;
+      bottom:100px;
+    }
+
+    .card3{
+      bottom:20px;
+      left:90px;
+    }
+
+    /* STATS */
+
+    .stats{
       width:100%;
-    }
+      max-width:1200px;
 
-    .hero-card-info{
-      padding:15px;
-    }
+      margin:4rem auto;
 
-    .wave span{
-      display:inline-block;
-      width:5px;
-      height:20px;
-      background:#ff7b00;
-      margin-right:3px;
-      animation:wave 1s infinite;
-    }
+      padding:0 6%;
 
-    @keyframes wave{
-      50%{height:40px;}
-    }
-
-    /* SECTIONS */
-    .section{
-      padding:100px 7%;
-    }
-
-    .title{
-      text-align:center;
-      font-size:2rem;
-    }
-
-    .subtitle{
-      text-align:center;
-      color:#aaa;
-      margin-bottom:40px;
-    }
-
-    .grid{
       display:grid;
       grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
-      gap:20px;
+      gap:1.5rem;
     }
 
-    .card{
-      background:rgba(255,255,255,0.05);
-      padding:25px;
-      border-radius:20px;
+    .stat-box{
+      padding:2rem;
+
+      border-radius:25px;
+
+      background:rgba(255,255,255,.05);
+
+      border:1px solid rgba(255,255,255,.08);
+
+      backdrop-filter:blur(14px);
     }
 
-    .icon{
-      font-size:2rem;
-      margin-bottom:10px;
+    .stat-box h2{
+      font-size:2.4rem;
+
+      margin-bottom:.5rem;
+
+      color:var(--accent-1);
     }
 
-    /* GENRES */
-    .genre{
-      padding:40px;
-      border-radius:20px;
-      font-weight:bold;
-      text-align:center;
+    .stat-box p{
+      color:#d0d0d0;
     }
 
-    .afro{background:#ff7b00;}
-    .amapiano{background:#6a00ff;}
-    .gospel{background:#19D7FF;}
-    .fusion{background:#ff2e63;}
+    /* FEATURES */
 
-    /* TRACKS */
-    .track img{
+    .features{
       width:100%;
-      border-radius:15px;
+      max-width:1300px;
+
+      margin:auto;
+
+      padding:5rem 6%;
     }
 
-    .track h3{
-      margin-top:10px;
+    .section-title{
+      text-align:center;
+      margin-bottom:4rem;
     }
+
+    .section-title h2{
+      font-size:3rem;
+      margin-bottom:1rem;
+    }
+
+    .section-title p{
+      color:#cfcfcf;
+    }
+
+    .features-grid{
+      display:grid;
+      grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+      gap:2rem;
+    }
+
+    .feature-card{
+      padding:2rem;
+
+      border-radius:25px;
+
+      background:rgba(255,255,255,.05);
+
+      border:1px solid rgba(255,255,255,.08);
+
+      transition:.3s;
+    }
+
+    .feature-card:hover{
+      transform:translateY(-10px);
+
+      border-color:var(--accent-1);
+    }
+
+    .feature-icon{
+      font-size:2.5rem;
+      margin-bottom:1rem;
+    }
+
+    .feature-card h3{
+      margin-bottom:1rem;
+    }
+
+    .feature-card p{
+      color:#cfcfcf;
+      line-height:1.7;
+    }
+
+    /* TRENDING */
+
+    .trending{
+      width:100%;
+      max-width:1300px;
+
+      margin:auto;
+
+      padding:3rem 6% 6rem;
+    }
+
+    .track-grid{
+      display:grid;
+      grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+      gap:2rem;
+    }
+
+    .track-card{
+      overflow:hidden;
+
+      border-radius:25px;
+
+      background:rgba(255,255,255,.05);
+
+      border:1px solid rgba(255,255,255,.08);
+    }
+
+    .track-card img{
+      width:100%;
+      height:240px;
+
+      object-fit:cover;
+    }
+
+    .track-info{
+      padding:1.5rem;
+    }
+
+    .track-info h3{
+      margin-bottom:.5rem;
+    }
+
+    .track-info p{
+      color:#bdbdbd;
+    }
+
+    /* FOOTER */
 
     footer{
       text-align:center;
-      padding:60px;
-      color:#777;
-    }
-  </style>
 
+      padding:3rem 2rem;
+
+      color:#bdbdbd;
+    }
+
+    /* ANIMATIONS */
+
+    @keyframes bgMove{
+
+      0%{
+        background-position:0% 50%;
+      }
+
+      50%{
+        background-position:100% 50%;
+      }
+
+      100%{
+        background-position:0% 50%;
+      }
+
+    }
+
+    @keyframes floatLogo{
+
+      0%{
+        transform:translateY(0px);
+      }
+
+      50%{
+        transform:translateY(-15px);
+      }
+
+      100%{
+        transform:translateY(0px);
+      }
+
+    }
+
+    @keyframes floatCard{
+
+      0%{
+        transform:translateY(0px);
+      }
+
+      50%{
+        transform:translateY(-10px);
+      }
+
+      100%{
+        transform:translateY(0px);
+      }
+
+    }
+
+    /* MOBILE */
+
+    @media(max-width:980px){
+
+      .hero{
+        grid-template-columns:1fr;
+
+        text-align:center;
+      }
+
+      .hero-content{
+        margin:auto;
+      }
+
+      .hero-buttons{
+        justify-content:center;
+      }
+
+      .vibe-strip{
+        justify-content:center;
+      }
+
+      .hero h1{
+        font-size:3.8rem;
+      }
+
+      nav{
+        display:none;
+      }
+
+      .floating-card{
+        display:none;
+      }
+
+    }
+
+    @media(max-width:768px){
+
+      .hero h1{
+        font-size:2.8rem;
+      }
+
+      .main-logo{
+        width:250px;
+        height:250px;
+      }
+
+      .main-logo h2{
+        font-size:2rem;
+      }
+
+    }
+
+  </style>
 </head>
 
 <body>
 
-  <!-- GLOW -->
-  <div class="glow glow1"></div>
-  <div class="glow glow2"></div>
+  <div class="noise"></div>
 
-  <!-- NAV -->
-  <nav class="navbar">
-    <div class="logo">Lytune Studio</div>
+  <div class="bg-blur blur1"></div>
+  <div class="bg-blur blur2"></div>
 
-    <ul class="nav-links">
-      <li><a href="#features">Features</a></li>
-      <li><a href="#genres">Genres</a></li>
-      <li><a href="#trending">Trending</a></li>
-    </ul>
+  <!-- TOPBAR -->
 
-    <button class="nav-btn">Launch App</button>
-  </nav>
+  <header class="topbar">
+
+    <div class="brand">
+      🎧 Lytune Studio
+    </div>
+
+    <nav>
+      <a href="#">Home</a>
+      <a href="#">Features</a>
+      <a href="#">Trending</a>
+      <a href="#">Artists</a>
+      <a href="#">Upload</a>
+    </nav>
+
+    <button class="launch-btn">
+      Launch App
+    </button>
+
+  </header>
 
   <!-- HERO -->
+
   <section class="hero">
 
-    <div class="hero-text">
-      <span class="tag">🌍 Afrobeat Creator Universe</span>
+    <div class="hero-content">
 
-      <h1>From Lagos<br>To The World</h1>
+      <div class="hero-badge">
+        🔥 Afrobeat Creator Universe
+      </div>
+
+      <h1>
+        From Lagos
+        <span>To The World</span>
+      </h1>
 
       <p>
-        A home for Afrobeats, Amapiano, Afro Fusion,
-        DJs and creators shaping global sound.
+        Lytune Studio is the futuristic home for Afrobeats,
+        Amapiano, Gospel Groove, Afro Fusion and next generation
+        African creators shaping global sound culture.
       </p>
 
       <div class="hero-buttons">
-        <a class="btn-primary" href="#features">Start Creating</a>
-        <a class="btn-secondary" href="#trending">Explore Sounds</a>
+
+        <a href="#" class="main-btn">
+          Start Creating
+        </a>
+
+        <a href="#" class="ghost-btn">
+          Explore Music
+        </a>
+
       </div>
+
+      <div class="vibe-strip">
+        <span>🥁 Afrobeat Kits</span>
+        <span>🎹 Amapiano</span>
+        <span>🔥 Viral Sounds</span>
+        <span>🎤 Artist Uploads</span>
+      </div>
+
     </div>
 
-    <div class="hero-card">
+    <div class="hero-visual">
 
-      <img src="https://images.unsplash.com/photo-1511379938547-c1f69419868d?q=80&w=1200&auto=format&fit=crop">
+      <div class="main-logo">
+        <h2>
+          LYTUNE
+        </h2>
+      </div>
 
-      <div class="hero-card-info">
-        <h3>Midnight Lagos</h3>
-        <p>Afro Fusion • 24K Plays</p>
+      <div class="floating-card card1">
+        🎧 2M+ Streams
+      </div>
 
-        <div class="wave">
-          <span></span><span></span><span></span><span></span><span></span>
+      <div class="floating-card card2">
+        🔥 Trending #1
+      </div>
+
+      <div class="floating-card card3">
+        🌍 Afro Fusion Wave
+      </div>
+
+    </div>
+
+  </section>
+
+  <!-- STATS -->
+
+  <section class="stats">
+
+    <div class="stat-box">
+      <h2>12M+</h2>
+      <p>Monthly Streams</p>
+    </div>
+
+    <div class="stat-box">
+      <h2>500K+</h2>
+      <p>Active Creators</p>
+    </div>
+
+    <div class="stat-box">
+      <h2>250K+</h2>
+      <p>Beat Uploads</p>
+    </div>
+
+    <div class="stat-box">
+      <h2>80+</h2>
+      <p>Countries Listening</p>
+    </div>
+
+  </section>
+
+  <!-- FEATURES -->
+
+  <section class="features">
+
+    <div class="section-title">
+      <h2>Afrobeat Features</h2>
+      <p>
+        Built for African producers, artists and creators.
+      </p>
+    </div>
+
+    <div class="features-grid">
+
+      <div class="feature-card">
+        <div class="feature-icon">🥁</div>
+        <h3>Afrobeats Drum Kits</h3>
+        <p>
+          Download premium Afrobeat and street-hop drum packs.
+        </p>
+      </div>
+
+      <div class="feature-card">
+        <div class="feature-icon">🎹</div>
+        <h3>Amapiano Log Drums</h3>
+        <p>
+          Create South African bounce with futuristic sounds.
+        </p>
+      </div>
+
+      <div class="feature-card">
+        <div class="feature-icon">🔥</div>
+        <h3>Trending Charts</h3>
+        <p>
+          Explore what creators across Africa are vibing to.
+        </p>
+      </div>
+
+      <div class="feature-card">
+        <div class="feature-icon">🎤</div>
+        <h3>Artist Uploads</h3>
+        <p>
+          Upload snippets, freestyles and viral sounds instantly.
+        </p>
+      </div>
+
+      <div class="feature-card">
+        <div class="feature-icon">🕺</div>
+        <h3>Dance Challenges</h3>
+        <p>
+          Connect music to global Afro dance trends.
+        </p>
+      </div>
+
+      <div class="feature-card">
+        <div class="feature-icon">🏆</div>
+        <h3>Beat Battles</h3>
+        <p>
+          Weekly producer competitions and rankings.
+        </p>
+      </div>
+
+    </div>
+
+  </section>
+
+  <!-- TRENDING -->
+
+  <section class="trending">
+
+    <div class="section-title">
+      <h2>Trending Tracks</h2>
+      <p>
+        Sounds taking over the continent.
+      </p>
+    </div>
+
+    <div class="track-grid">
+
+      <div class="track-card">
+        <img src="https://images.unsplash.com/photo-1493225457124-a3eb161ffa5f?q=80&w=1200&auto=format&fit=crop">
+
+        <div class="track-info">
+          <h3>Midnight Lagos</h3>
+          <p>Afro Fusion • 24K Plays</p>
+        </div>
+      </div>
+
+      <div class="track-card">
+        <img src="https://images.unsplash.com/photo-1501612780327-45045538702b?q=80&w=1200&auto=format&fit=crop">
+
+        <div class="track-info">
+          <h3>Street Bounce</h3>
+          <p>Amapiano • 18K Plays</p>
+        </div>
+      </div>
+
+      <div class="track-card">
+        <img src="https://images.unsplash.com/photo-1516280440614-37939bbacd81?q=80&w=1200&auto=format&fit=crop">
+
+        <div class="track-info">
+          <h3>Wave Control</h3>
+          <p>Afro Drill • 31K Plays</p>
         </div>
       </div>
 
@@ -286,55 +888,10 @@
 
   </section>
 
-  <!-- FEATURES -->
-  <section class="section" id="features">
-    <h2 class="title">🌍 Afrobeat Creator Universe</h2>
-    <p class="subtitle">Everything African creators need</p>
-
-    <div class="grid">
-
-      <div class="card">
-        <div class="icon">🥁</div>
-        <h3>Drum Kits</h3>
-        <p>Afrobeat & Amapiano sounds.</p>
-      </div>
-
-      <div class="card">
-        <div class="icon">🎹</div>
-        <h3>Log Drums</h3>
-        <p>Deep African bounce engine.</p>
-      </div>
-
-      <div class="card">
-        <div class="icon">🔥</div>
-        <h3>Trending Charts</h3>
-        <p>Naija & African hits daily.</p>
-      </div>
-
-    </div>
-  </section>
-
-  <!-- GENRES -->
-  <section class="section" id="genres">
-
-    <h2 class="title">🎧 Genres</h2>
-    <p class="subtitle">African sound universe</p>
-
-    <div class="grid">
-
-      <div class="genre afro">Afrobeats</div>
-      <div class="genre amapiano">Amapiano</div>
-      <div class="genre gospel">Gospel</div>
-      <div class="genre fusion">Afro Fusion</div>
-
-    </div>
-
-  </section>
-
   <!-- FOOTER -->
+
   <footer>
-    <h2>Lytune Studio</h2>
-    <p>Built for African sound 🌍</p>
+    © 2026 Lytune Studio • Built For African Sound 🌍
   </footer>
 
 </body>
