@@ -5,126 +5,281 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Lytune Studio</title>
 
-  <link rel="icon" type="image/svg+xml" href="assets/images/logo.svg">
-  <link rel="stylesheet" href="home.css">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
 
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;700;800&display=swap" rel="stylesheet">
+  <style>
+    *{
+      margin:0;
+      padding:0;
+      box-sizing:border-box;
+      font-family:'Poppins',sans-serif;
+    }
+
+    body{
+      background:#070710;
+      color:white;
+      overflow-x:hidden;
+    }
+
+    /* GLOW */
+    .glow{
+      position:fixed;
+      width:400px;
+      height:400px;
+      border-radius:50%;
+      filter:blur(150px);
+      z-index:-1;
+    }
+
+    .glow1{
+      background:#ff7b00;
+      top:-150px;
+      left:-150px;
+    }
+
+    .glow2{
+      background:#6a00ff;
+      bottom:-150px;
+      right:-150px;
+    }
+
+    /* NAV */
+    .navbar{
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      padding:25px 7%;
+      position:sticky;
+      top:0;
+      background:rgba(0,0,0,0.4);
+      backdrop-filter:blur(15px);
+    }
+
+    .logo{
+      font-size:1.8rem;
+      font-weight:800;
+      background:linear-gradient(90deg,#ff7b00,#ff2e63,#6a00ff);
+      -webkit-background-clip:text;
+      -webkit-text-fill-color:transparent;
+    }
+
+    .nav-links{
+      display:flex;
+      gap:25px;
+      list-style:none;
+    }
+
+    .nav-links a{
+      color:#bbb;
+      text-decoration:none;
+    }
+
+    .nav-links a:hover{
+      color:#ffb700;
+    }
+
+    .nav-btn{
+      padding:10px 20px;
+      border:none;
+      border-radius:30px;
+      background:linear-gradient(90deg,#ff7b00,#ff2e63);
+      color:white;
+      cursor:pointer;
+    }
+
+    /* HERO */
+    .hero{
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      padding:100px 7%;
+    }
+
+    .hero-text{
+      max-width:500px;
+    }
+
+    .tag{
+      background:rgba(255,255,255,0.1);
+      padding:6px 12px;
+      border-radius:20px;
+      font-size:12px;
+    }
+
+    .hero h1{
+      font-size:3.5rem;
+      margin:20px 0;
+    }
+
+    .hero p{
+      color:#aaa;
+      line-height:1.6;
+    }
+
+    .hero-buttons{
+      margin-top:20px;
+      display:flex;
+      gap:15px;
+    }
+
+    .btn-primary{
+      background:linear-gradient(90deg,#ff7b00,#ff2e63);
+      padding:12px 20px;
+      border-radius:30px;
+      color:white;
+      text-decoration:none;
+    }
+
+    .btn-secondary{
+      border:1px solid #444;
+      padding:12px 20px;
+      border-radius:30px;
+      color:#ccc;
+      text-decoration:none;
+    }
+
+    .hero-card{
+      width:320px;
+      background:rgba(255,255,255,0.05);
+      border-radius:20px;
+      overflow:hidden;
+    }
+
+    .hero-card img{
+      width:100%;
+    }
+
+    .hero-card-info{
+      padding:15px;
+    }
+
+    .wave span{
+      display:inline-block;
+      width:5px;
+      height:20px;
+      background:#ff7b00;
+      margin-right:3px;
+      animation:wave 1s infinite;
+    }
+
+    @keyframes wave{
+      50%{height:40px;}
+    }
+
+    /* SECTIONS */
+    .section{
+      padding:100px 7%;
+    }
+
+    .title{
+      text-align:center;
+      font-size:2rem;
+    }
+
+    .subtitle{
+      text-align:center;
+      color:#aaa;
+      margin-bottom:40px;
+    }
+
+    .grid{
+      display:grid;
+      grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+      gap:20px;
+    }
+
+    .card{
+      background:rgba(255,255,255,0.05);
+      padding:25px;
+      border-radius:20px;
+    }
+
+    .icon{
+      font-size:2rem;
+      margin-bottom:10px;
+    }
+
+    /* GENRES */
+    .genre{
+      padding:40px;
+      border-radius:20px;
+      font-weight:bold;
+      text-align:center;
+    }
+
+    .afro{background:#ff7b00;}
+    .amapiano{background:#6a00ff;}
+    .gospel{background:#19D7FF;}
+    .fusion{background:#ff2e63;}
+
+    /* TRACKS */
+    .track img{
+      width:100%;
+      border-radius:15px;
+    }
+
+    .track h3{
+      margin-top:10px;
+    }
+
+    footer{
+      text-align:center;
+      padding:60px;
+      color:#777;
+    }
+  </style>
+
 </head>
 
 <body>
 
-  <!-- NAVBAR -->
-  <nav class="navbar">
+  <!-- GLOW -->
+  <div class="glow glow1"></div>
+  <div class="glow glow2"></div>
 
-    <div class="nav-logo">
-      <h2>Lytune</h2>
-    </div>
+  <!-- NAV -->
+  <nav class="navbar">
+    <div class="logo">Lytune Studio</div>
 
     <ul class="nav-links">
-      <li><a href="#">Home</a></li>
-      <li><a href="#discover">Discover</a></li>
       <li><a href="#features">Features</a></li>
-      <li><a href="#charts">Charts</a></li>
+      <li><a href="#genres">Genres</a></li>
+      <li><a href="#trending">Trending</a></li>
     </ul>
 
     <button class="nav-btn">Launch App</button>
-
   </nav>
 
   <!-- HERO -->
   <section class="hero">
 
-    <div class="hero-content">
+    <div class="hero-text">
+      <span class="tag">🌍 Afrobeat Creator Universe</span>
 
-      <span class="tag">🎵 NEXT GEN MUSIC PLATFORM</span>
-
-      <h1>
-        Create.<br>
-        Collaborate.<br>
-        Go Viral.
-      </h1>
+      <h1>From Lagos<br>To The World</h1>
 
       <p>
-        Lytune Studio helps artists, producers and creators
-        build futuristic sounds with powerful collaboration tools.
+        A home for Afrobeats, Amapiano, Afro Fusion,
+        DJs and creators shaping global sound.
       </p>
 
       <div class="hero-buttons">
-        <a href="#" class="primary-btn">Start Creating</a>
-        <a href="#" class="secondary-btn">Watch Demo</a>
+        <a class="btn-primary" href="#features">Start Creating</a>
+        <a class="btn-secondary" href="#trending">Explore Sounds</a>
       </div>
-
     </div>
 
-    <div class="hero-image">
+    <div class="hero-card">
 
-      <div class="music-card">
-        <img src="https://images.unsplash.com/photo-1511379938547-c1f69419868d?q=80&w=800&auto=format&fit=crop" alt="Music">
-        
-        <div class="music-info">
-          <h3>Midnight Echo</h3>
-          <p>Afro Fusion Beat</p>
+      <img src="https://images.unsplash.com/photo-1511379938547-c1f69419868d?q=80&w=1200&auto=format&fit=crop">
+
+      <div class="hero-card-info">
+        <h3>Midnight Lagos</h3>
+        <p>Afro Fusion • 24K Plays</p>
+
+        <div class="wave">
+          <span></span><span></span><span></span><span></span><span></span>
         </div>
-
-      </div>
-
-    </div>
-
-  </section>
-
-  <!-- TRENDING -->
-  <section id="discover" class="discover">
-
-    <div class="section-title">
-      <h2>Trending Tracks</h2>
-      <p>Explore what creators are vibing to right now.</p>
-    </div>
-
-    <div class="discover-grid">
-
-      <div class="track-card">
-
-        <img src="https://images.unsplash.com/photo-1493225457124-a3eb161ffa5f?q=80&w=800&auto=format&fit=crop" alt="Track">
-
-        <div class="overlay">
-          <button>▶</button>
-        </div>
-
-        <div class="track-info">
-          <h3>Night Drive</h3>
-          <span>12.4K Plays</span>
-        </div>
-
-      </div>
-
-      <div class="track-card">
-
-        <img src="https://images.unsplash.com/photo-1501612780327-45045538702b?q=80&w=800&auto=format&fit=crop" alt="Track">
-
-        <div class="overlay">
-          <button>▶</button>
-        </div>
-
-        <div class="track-info">
-          <h3>Sky Rhythm</h3>
-          <span>8.1K Plays</span>
-        </div>
-
-      </div>
-
-      <div class="track-card">
-
-        <img src="https://images.unsplash.com/photo-1516280440614-37939bbacd81?q=80&w=800&auto=format&fit=crop" alt="Track">
-
-        <div class="overlay">
-          <button>▶</button>
-        </div>
-
-        <div class="track-info">
-          <h3>Pulse Waves</h3>
-          <span>20K Plays</span>
-        </div>
-
       </div>
 
     </div>
@@ -132,68 +287,54 @@
   </section>
 
   <!-- FEATURES -->
-  <section id="features" class="features">
+  <section class="section" id="features">
+    <h2 class="title">🌍 Afrobeat Creator Universe</h2>
+    <p class="subtitle">Everything African creators need</p>
 
-    <div class="section-title">
-      <h2>Why Lytune?</h2>
-    </div>
+    <div class="grid">
 
-    <div class="features-grid">
+      <div class="card">
+        <div class="icon">🥁</div>
+        <h3>Drum Kits</h3>
+        <p>Afrobeat & Amapiano sounds.</p>
+      </div>
 
-      <div class="feature-box">
+      <div class="card">
         <div class="icon">🎹</div>
-        <h3>Live Collaboration</h3>
-        <p>Create together in real time.</p>
+        <h3>Log Drums</h3>
+        <p>Deep African bounce engine.</p>
       </div>
 
-      <div class="feature-box">
-        <div class="icon">☁️</div>
-        <h3>Cloud Sync</h3>
-        <p>Access projects everywhere.</p>
-      </div>
-
-      <div class="feature-box">
+      <div class="card">
         <div class="icon">🔥</div>
-        <h3>Trending System</h3>
-        <p>Get discovered instantly.</p>
+        <h3>Trending Charts</h3>
+        <p>Naija & African hits daily.</p>
       </div>
 
-      <div class="feature-box">
-        <div class="icon">🎧</div>
-        <h3>Audio Preview</h3>
-        <p>Preview tracks instantly.</p>
-      </div>
+    </div>
+  </section>
+
+  <!-- GENRES -->
+  <section class="section" id="genres">
+
+    <h2 class="title">🎧 Genres</h2>
+    <p class="subtitle">African sound universe</p>
+
+    <div class="grid">
+
+      <div class="genre afro">Afrobeats</div>
+      <div class="genre amapiano">Amapiano</div>
+      <div class="genre gospel">Gospel</div>
+      <div class="genre fusion">Afro Fusion</div>
 
     </div>
 
   </section>
 
-  <!-- MUSIC PLAYER -->
-  <div class="music-player">
-
-    <div class="player-left">
-
-      <img src="https://images.unsplash.com/photo-1493225457124-a3eb161ffa5f?q=80&w=300&auto=format&fit=crop" alt="Album">
-
-      <div>
-        <h4>Night Drive</h4>
-        <p>Lytune Exclusive</p>
-      </div>
-
-    </div>
-
-    <div class="player-controls">
-      <button>⏮</button>
-      <button class="play-btn">▶</button>
-      <button>⏭</button>
-    </div>
-
-  </div>
-
   <!-- FOOTER -->
   <footer>
     <h2>Lytune Studio</h2>
-    <p>Crafting sound beyond limits.</p>
+    <p>Built for African sound 🌍</p>
   </footer>
 
 </body>
