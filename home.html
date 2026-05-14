@@ -1,12 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Lytune Studio</title>
 
   <link rel="stylesheet" href="home.css">
-
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
 </head>
 
@@ -16,40 +15,15 @@
 <header class="nav">
 
   <div class="logo">
-
-    <div class="mini-logo">
-
-      <svg viewBox="0 0 220 220" xmlns="http://www.w3.org/2000/svg">
-
-        <defs>
-          <linearGradient id="lytuneGradient1" x1="0%" y1="0%" x2="100%" y2="100%">
-            <stop offset="0%" stop-color="#19D7FF"/>
-            <stop offset="55%" stop-color="#007BFF"/>
-            <stop offset="100%" stop-color="#9B2EFF"/>
-          </linearGradient>
-        </defs>
-
-        <path
-          d="M48 165 L82 65 Q86 50 98 47 Q110 44 121 56 L174 118 Q184 130 180 145 Q175 159 160 160 Q149 161 141 152 L109 116 L82 166 Q76 176 64 176 Q53 176 48 165"
-          fill="none"
-          stroke="url(#lytuneGradient1)"
-          stroke-width="24"
-          stroke-linecap="round"
-        />
-
-      </svg>
-
-    </div>
-
-    Lytune Studio
-
+    🎧 Lytune Studio
   </div>
 
   <nav>
     <a href="#market">Marketplace</a>
+    <a href="#trending">Trending</a>
+    <a href="#upload">Upload</a>
+    <a href="#earn">Earn</a>
     <a href="#features">Features</a>
-    <a href="#how">How it Works</a>
-    <a href="#contact">Contact</a>
   </nav>
 
   <button onclick="document.getElementById('market').scrollIntoView()">
@@ -66,14 +40,15 @@
     <h1>Buy & Sell Afrobeat Beats 🎧</h1>
 
     <p>
-      Lytune Studio is an Afrobeat marketplace where producers upload beats,
-      sell instrumentals, and artists discover fresh African sounds daily.
+      Lytune Studio is a modern Afrobeat marketplace where producers upload beats,
+      artists discover sounds, and creators earn from their music globally.
+      Built for Afrobeats, Amapiano, Afro Fusion and street sound culture.
     </p>
 
-    <div class="hero-buttons">
+    <div class="buttons">
 
-      <a href="#market" class="btn-primary">Start Selling</a>
-      <a href="#features" class="btn-secondary">Explore Features</a>
+      <a href="#market" class="primary">Explore Marketplace</a>
+      <a href="#upload" class="secondary">Upload Beats</a>
 
     </div>
 
@@ -81,26 +56,92 @@
 
 </section>
 
-<!-- MARKET -->
+<!-- MARKETPLACE -->
 <section id="market" class="section">
 
   <h2>🎧 Beat Marketplace</h2>
+  <p class="desc">
+    A simple system like BeatStars — but focused on Afrobeat creators.
+  </p>
 
   <div class="grid">
 
     <div class="card">
-      <h3>Sell Beats</h3>
-      <p>Upload Afrobeat, Amapiano & Afro Fusion instrumentals and earn money.</p>
-    </div>
-
-    <div class="card">
       <h3>Buy Beats</h3>
-      <p>Artists can preview and purchase beats instantly.</p>
+      <p>Listen, preview and buy Afrobeat instrumentals instantly.</p>
     </div>
 
     <div class="card">
-      <h3>Licensing</h3>
-      <p>Choose exclusive or non-exclusive beat rights easily.</p>
+      <h3>Sell Beats</h3>
+      <p>Producers upload beats and start earning from downloads.</p>
+    </div>
+
+    <div class="card">
+      <h3>Lease / Exclusive Rights</h3>
+      <p>Flexible licensing options for artists and creators.</p>
+    </div>
+
+  </div>
+
+</section>
+
+<!-- TRENDING -->
+<section id="trending" class="section">
+
+  <h2>🔥 Trending Beats</h2>
+
+  <div class="grid">
+
+    <div class="card">
+      <h3>Lagos Bounce</h3>
+      <p>Afrobeat • 32K plays</p>
+    </div>
+
+    <div class="card">
+      <h3>Street Vibes</h3>
+      <p>Amapiano • 21K plays</p>
+    </div>
+
+    <div class="card">
+      <h3>Midnight Rhythm</h3>
+      <p>Afro Fusion • 44K plays</p>
+    </div>
+
+  </div>
+
+</section>
+
+<!-- UPLOAD -->
+<section id="upload" class="section">
+
+  <h2>⬆ Upload Your Beat</h2>
+
+  <div class="card">
+
+    <p>
+      Upload your Afrobeat, Amapiano or Afro Fusion beats in seconds.
+      Set your price, choose license type, and start earning instantly.
+    </p>
+
+  </div>
+
+</section>
+
+<!-- EARN -->
+<section id="earn" class="section">
+
+  <h2>💰 Earn from Your Music</h2>
+
+  <div class="grid">
+
+    <div class="card">
+      <h3>Instant Payments</h3>
+      <p>Get paid every time your beat is purchased.</p>
+    </div>
+
+    <div class="card">
+      <h3>Global Reach</h3>
+      <p>Your beats can be used by artists worldwide.</p>
     </div>
 
   </div>
@@ -116,43 +157,22 @@
 
     <div class="card">
       <h3>Producer Dashboard</h3>
-      <p>Track uploads, sales, and earnings in real time.</p>
+      <p>Track sales, uploads and performance in real time.</p>
     </div>
 
     <div class="card">
-      <h3>Trending Beats</h3>
-      <p>Discover viral Afrobeat sounds across Africa.</p>
+      <h3>Trending Algorithm</h3>
+      <p>Discover viral Afrobeat sounds automatically.</p>
     </div>
 
     <div class="card">
-      <h3>Secure Payments</h3>
-      <p>Safe transactions between buyers and producers.</p>
-    </div>
-
-  </div>
-
-</section>
-
-<!-- HOW IT WORKS -->
-<section id="how" class="section">
-
-  <h2>⚡ How It Works</h2>
-
-  <div class="grid">
-
-    <div class="card">
-      <h3>1. Upload</h3>
-      <p>Producers upload their beats to the platform.</p>
+      <h3>Secure Marketplace</h3>
+      <p>Safe transactions between artists and producers.</p>
     </div>
 
     <div class="card">
-      <h3>2. Discover</h3>
-      <p>Artists browse and preview beats.</p>
-    </div>
-
-    <div class="card">
-      <h3>3. Buy</h3>
-      <p>Securely purchase and download instantly.</p>
+      <h3>Audio Preview</h3>
+      <p>Instant beat playback before purchase.</p>
     </div>
 
   </div>
@@ -161,7 +181,7 @@
 
 <!-- FOOTER -->
 <footer>
-  <p>© 2026 Lytune Studio — Afrobeat Marketplace 🌍</p>
+  © 2026 Lytune Studio • Afrobeat Marketplace 🌍
 </footer>
 
 </body>
