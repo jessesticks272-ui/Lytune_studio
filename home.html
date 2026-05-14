@@ -4,48 +4,197 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Lytune Studio</title>
+
   <link rel="icon" type="image/svg+xml" href="assets/images/logo.svg">
   <link rel="stylesheet" href="home.css">
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700;800&display=swap" rel="stylesheet">
+
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;700;800&display=swap" rel="stylesheet">
 </head>
+
 <body>
-<div class="container">
+
+  <!-- NAVBAR -->
+  <nav class="navbar">
+
+    <div class="nav-logo">
+      <h2>Lytune</h2>
+    </div>
+
+    <ul class="nav-links">
+      <li><a href="#">Home</a></li>
+      <li><a href="#discover">Discover</a></li>
+      <li><a href="#features">Features</a></li>
+      <li><a href="#charts">Charts</a></li>
+    </ul>
+
+    <button class="nav-btn">Launch App</button>
+
+  </nav>
 
   <!-- HERO -->
-  <div class="hero">
+  <section class="hero">
 
-    <!-- LOGO -->
-    <div class="logo">
+    <div class="hero-content">
 
-      <svg viewBox="0 0 220 220" xmlns="http://www.w3.org/2000/svg">
+      <span class="tag">🎵 NEXT GEN MUSIC PLATFORM</span>
 
-        <defs>
+      <h1>
+        Create.<br>
+        Collaborate.<br>
+        Go Viral.
+      </h1>
 
-          <linearGradient id="lytuneGradient" x1="0%" y1="0%" x2="100%" y2="100%">
-            <stop offset="0%" stop-color="#19D7FF"/>
-            <stop offset="55%" stop-color="#007BFF"/>
-            <stop offset="100%" stop-color="#9B2EFF"/>
-          </linearGradient>
+      <p>
+        Lytune Studio helps artists, producers and creators
+        build futuristic sounds with powerful collaboration tools.
+      </p>
 
-        </defs>
+      <div class="hero-buttons">
+        <a href="#" class="primary-btn">Start Creating</a>
+        <a href="#" class="secondary-btn">Watch Demo</a>
+      </div>
 
-        <path
-          d="
-            M48 165
+    </div>
 
-            L82 65
+    <div class="hero-image">
 
-            Q86 50 98 47
+      <div class="music-card">
+        <img src="https://images.unsplash.com/photo-1511379938547-c1f69419868d?q=80&w=800&auto=format&fit=crop" alt="Music">
+        
+        <div class="music-info">
+          <h3>Midnight Echo</h3>
+          <p>Afro Fusion Beat</p>
+        </div>
 
-            Q110 44 121 56
+      </div>
 
-            L174 118
+    </div>
 
-            Q184 130 180 145
+  </section>
 
-            Q175 159 160 160
+  <!-- TRENDING -->
+  <section id="discover" class="discover">
 
-            Q149 161 141 152
+    <div class="section-title">
+      <h2>Trending Tracks</h2>
+      <p>Explore what creators are vibing to right now.</p>
+    </div>
 
-            L109 116
+    <div class="discover-grid">
+
+      <div class="track-card">
+
+        <img src="https://images.unsplash.com/photo-1493225457124-a3eb161ffa5f?q=80&w=800&auto=format&fit=crop" alt="Track">
+
+        <div class="overlay">
+          <button>▶</button>
+        </div>
+
+        <div class="track-info">
+          <h3>Night Drive</h3>
+          <span>12.4K Plays</span>
+        </div>
+
+      </div>
+
+      <div class="track-card">
+
+        <img src="https://images.unsplash.com/photo-1501612780327-45045538702b?q=80&w=800&auto=format&fit=crop" alt="Track">
+
+        <div class="overlay">
+          <button>▶</button>
+        </div>
+
+        <div class="track-info">
+          <h3>Sky Rhythm</h3>
+          <span>8.1K Plays</span>
+        </div>
+
+      </div>
+
+      <div class="track-card">
+
+        <img src="https://images.unsplash.com/photo-1516280440614-37939bbacd81?q=80&w=800&auto=format&fit=crop" alt="Track">
+
+        <div class="overlay">
+          <button>▶</button>
+        </div>
+
+        <div class="track-info">
+          <h3>Pulse Waves</h3>
+          <span>20K Plays</span>
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+  <!-- FEATURES -->
+  <section id="features" class="features">
+
+    <div class="section-title">
+      <h2>Why Lytune?</h2>
+    </div>
+
+    <div class="features-grid">
+
+      <div class="feature-box">
+        <div class="icon">🎹</div>
+        <h3>Live Collaboration</h3>
+        <p>Create together in real time.</p>
+      </div>
+
+      <div class="feature-box">
+        <div class="icon">☁️</div>
+        <h3>Cloud Sync</h3>
+        <p>Access projects everywhere.</p>
+      </div>
+
+      <div class="feature-box">
+        <div class="icon">🔥</div>
+        <h3>Trending System</h3>
+        <p>Get discovered instantly.</p>
+      </div>
+
+      <div class="feature-box">
+        <div class="icon">🎧</div>
+        <h3>Audio Preview</h3>
+        <p>Preview tracks instantly.</p>
+      </div>
+
+    </div>
+
+  </section>
+
+  <!-- MUSIC PLAYER -->
+  <div class="music-player">
+
+    <div class="player-left">
+
+      <img src="https://images.unsplash.com/photo-1493225457124-a3eb161ffa5f?q=80&w=300&auto=format&fit=crop" alt="Album">
+
+      <div>
+        <h4>Night Drive</h4>
+        <p>Lytune Exclusive</p>
+      </div>
+
+    </div>
+
+    <div class="player-controls">
+      <button>⏮</button>
+      <button class="play-btn">▶</button>
+      <button>⏭</button>
+    </div>
+
+  </div>
+
+  <!-- FOOTER -->
+  <footer>
+    <h2>Lytune Studio</h2>
+    <p>Crafting sound beyond limits.</p>
+  </footer>
+
 </body>
+</html>
