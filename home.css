@@ -22,11 +22,6 @@ body{
   backdrop-filter:blur(12px);
 }
 
-.logo{
-  font-weight:800;
-  font-size:18px;
-}
-
 nav a{
   margin:0 10px;
   color:#aaa;
@@ -48,55 +43,27 @@ button{
 
 /* HERO */
 .hero{
-  padding:90px 6%;
+  padding:80px 6%;
 }
 
 .hero h1{
-  font-size:3.3rem;
+  font-size:3.2rem;
   margin-bottom:15px;
 }
 
 .hero p{
   color:#bbb;
   line-height:1.8;
-  max-width:650px;
-}
-
-/* BUTTONS */
-.buttons{
-  margin-top:20px;
-  display:flex;
-  gap:12px;
-}
-
-.primary{
-  background:linear-gradient(90deg,#19D7FF,#9B2EFF);
-  padding:12px 20px;
-  border-radius:30px;
-  text-decoration:none;
-  color:white;
-}
-
-.secondary{
-  border:1px solid #444;
-  padding:12px 20px;
-  border-radius:30px;
-  text-decoration:none;
-  color:white;
+  max-width:700px;
 }
 
 /* SECTIONS */
 .section{
-  padding:80px 6%;
+  padding:90px 6%;
 }
 
 .section h2{
-  margin-bottom:10px;
-}
-
-.desc{
-  color:#aaa;
-  margin-bottom:30px;
+  margin-bottom:25px;
 }
 
 .grid{
@@ -120,6 +87,6 @@ button{
 /* FOOTER */
 footer{
   text-align:center;
-  padding:40px;
+  padding:50px;
   color:#888;
 }
